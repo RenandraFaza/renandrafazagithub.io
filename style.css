@@ -1,0 +1,122 @@
+#body{
+    background: #01E6AB;
+    background: -webkit-linear-gradient(top left, #01E6AB, #0F07AD);
+    background: -moz-linear-gradient(top left, #01E6AB, #0F07AD);
+    background: linear-gradient(to bottom right, #01E6AB, #0F07AD);
+    background-repeat: no-repeat;
+    flex: auto;
+    align-items: center;
+}
+// Generate series of `.navbar-expand-*` responsive classes for configuring
+// where your navbar collapses.
+.navbar-expand {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    // stylelint-disable-next-line scss/selector-no-union-class-name
+    &#{$infix} {
+      @include media-breakpoint-up($next) {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+
+        .navbar-nav {
+          flex-direction: row;
+
+          .dropdown-menu {
+            position: absolute;
+          }
+
+          .nav-link {
+            padding-right: var(--#{$prefix}navbar-nav-link-padding-x);
+            padding-left: var(--#{$prefix}navbar-nav-link-padding-x);
+          }
+        }
+
+        .navbar-nav-scroll {
+          overflow: visible;
+        }
+
+        .navbar-collapse {
+          display: flex !important; // stylelint-disable-line declaration-no-important
+          flex-basis: auto;
+        }
+
+        .navbar-toggler {
+          display: none;
+        }
+
+        .offcanvas {
+          // stylelint-disable declaration-no-important
+          position: static;
+          z-index: auto;
+          flex-grow: 1;
+          width: auto !important;
+          height: auto !important;
+          visibility: visible !important;
+          background-color: transparent !important;
+          border: 0 !important;
+          transform: none !important;
+          @include box-shadow(none);
+          @include transition(none);
+          // stylelint-enable declaration-no-important
+
+          .offcanvas-header {
+            display: none;
+          }
+
+          .offcanvas-body {
+            display: flex;
+            flex-grow: 0;
+            padding: 0;
+            overflow-y: visible;
+          }
+        }
+      }
+    }
+  }
+}
+#container{
+    background: #FFFFFF;
+    background: -webkit-linear-gradient(top left, #FFFFFF, #83D1BB);
+    background: -moz-linear-gradient(top left, #FFFFFF, #83D1BB);
+    background: linear-gradient(to bottom right, #FFFFFF, #83D1BB);
+    width: 100%; 
+    height: 90vh;
+    margin: 9rem auto 2rem auto;
+    border-radius: 5px;
+}
+#col1 {
+    margin-left: 20px;
+}
+.row{
+    display: flex;
+    padding-top: 17px;
+    align-items: center;
+}
+b{
+    color: rgb(221, 52, 52);
+}
+.navbar{
+   background-color: rgba(80, 117, 150, 0);
+   width: 100%; 
+   margin-left: 20px;
+}
+footer{
+    height: 20px;
+}
+#bttn:hover{
+    background-color: #e4dfdfc2;
+}
+#pills-alu-tab:hover{
+    background-color: #6e98ec65;
+}
+#pills-contact-tab:hover{
+    background-color: #6e98ec65;
+}
+#pills-profile-tab:hover{
+    background-color: #6e98ec65;
+}
+#pills-home-tab:hover{
+    background-color: #6e98ec65;
+}
